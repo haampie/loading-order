@@ -1,10 +1,4 @@
-#include <iostream>
+#include "example.h"
+extern Example global_g;
+Example global_f(global_g.val);
 
-class Example
-{
-public:
-    int val;
-    Example(int val) : val(val) { std::cout << "init with " << val << '\n'; }
-};
-
-Example dep(DEFAULT_VALUE);

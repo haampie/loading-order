@@ -1,18 +1,8 @@
 #include <iostream>
-
-class Example;
-
-extern Example dep;
-
-class Example
-{
-public:
-    int val;
-    Example() : val(dep.val) {}
-};
-
-Example my_global;
+#include "example.h"
+extern Example global_f;
+Example global_main(global_f.val);
 
 int main() {
-    std::cout << my_global.val << '\n';
+    std::cout << "got " << global_main.val << '\n';
 }
